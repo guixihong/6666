@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="77" id="KGk-i7-Jjw" customClass="MyMessageTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="76.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预交底通知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaN-kZ-oVI">
+                        <rect key="frame" x="35" y="10" width="107" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="107" id="LG8-vs-JO0"/>
+                            <constraint firstAttribute="height" constant="21" id="lE2-sn-nYI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16/03/01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBP-AN-QfE">
+                        <rect key="frame" x="85" y="10" width="200" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="4pq-MW-Wo6"/>
+                            <constraint firstAttribute="width" constant="200" id="es9-nl-fg7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right.png" translatesAutoresizingMaskIntoConstraints="NO" id="hkj-5P-i57">
+                        <rect key="frame" x="300" y="35" width="15" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19" id="Q1o-b2-9ly"/>
+                            <constraint firstAttribute="width" constant="15" id="Zwo-kf-DkF"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您好,客户姓名:+地址将于2016年6月7了开始打几分可怜的数据分类考试的会计法律上的" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPU-1F-21a">
+                        <rect key="frame" x="35" y="31" width="265" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="mo5-aq-8QK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iun-bs-qt3">
+                        <rect key="frame" x="8" y="39" width="10" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="2sd-DZ-ecB"/>
+                            <constraint firstAttribute="height" constant="10" id="tjJ-u8-woA"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jPU-1F-21a" firstAttribute="top" secondItem="SBP-AN-QfE" secondAttribute="bottom" id="0sb-2k-It9"/>
+                    <constraint firstAttribute="trailing" secondItem="hkj-5P-i57" secondAttribute="trailing" constant="5" id="4gu-Ot-BbW"/>
+                    <constraint firstItem="hkj-5P-i57" firstAttribute="leading" secondItem="SBP-AN-QfE" secondAttribute="trailing" constant="15" id="7ur-oP-cr4"/>
+                    <constraint firstItem="hkj-5P-i57" firstAttribute="centerY" secondItem="Iun-bs-qt3" secondAttribute="centerY" id="Cvq-kv-iKK"/>
+                    <constraint firstItem="Iun-bs-qt3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Gim-bV-rat"/>
+                    <constraint firstItem="HaN-kZ-oVI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="35" id="N3q-nt-QYF"/>
+                    <constraint firstItem="hkj-5P-i57" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="35" id="O9K-2Q-NPS"/>
+                    <constraint firstItem="jPU-1F-21a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="35" id="TQN-8J-K15"/>
+                    <constraint firstItem="SBP-AN-QfE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="YOs-7V-LYl"/>
+                    <constraint firstAttribute="trailing" secondItem="jPU-1F-21a" secondAttribute="trailing" constant="20" id="b5T-m9-fa4"/>
+                    <constraint firstItem="HaN-kZ-oVI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hr4-M2-M7h"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="messageLabel" destination="jPU-1F-21a" id="4ea-rH-uAc"/>
+                <outlet property="timeLabel" destination="SBP-AN-QfE" id="p64-g5-tDb"/>
+                <outlet property="titleLabel" destination="HaN-kZ-oVI" id="kk8-qf-Zl4"/>
+            </connections>
+            <point key="canvasLocation" x="238" y="280.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Right.png" width="36" height="56"/>
+        <image name="circle.png" width="40" height="40"/>
+    </resources>
+</document>

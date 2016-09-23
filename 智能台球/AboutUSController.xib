@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutUSController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSw-rp-cro">
+                    <rect key="frame" x="15" y="20" width="345" height="200.5"/>
+                    <color key="backgroundColor" red="0.96213050830000002" green="0.96213050830000002" blue="0.96213050830000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <string key="text">万科链家装饰专注于精工品质，回归质量和服务本源。行业内推出精工体系、认证工匠设计管家、品控师等创新理念。
+品控师是消费者监督装修工程的代言人，全程按照消费者需求和和市场规范进行质量监控。为消费者将装修完全透明化汇报的重要角色，万科链家装饰对品控师有严格的作业要求，验检覆盖频次、实测实量标准、给消费者提供的《客户验收表》等都有明确的标准。
+万科链家装饰的《精工手册》近达200页，建立了专业的七防工法、四十项工艺、预验收交房等标准流程，以保障细节品质及产品长久使用。万科链家装饰有自己的工匠学院，工人上岗前都需要进行培训，执行严格的资格认证制度，持证上岗。
+设计管家有专业的家装设计、环境设计相关素养，具有良好的美感和设计灵感，熟悉装饰工程流程和工艺，为业主提供一对一装修设计服务。</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="XSw-rp-cro" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="TKg-FK-iKo"/>
+                <constraint firstItem="XSw-rp-cro" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="lXn-zz-7D1"/>
+                <constraint firstAttribute="trailing" secondItem="XSw-rp-cro" secondAttribute="trailing" constant="15" id="p3Z-rM-zmE"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="344.5" y="222.5"/>
+        </view>
+    </objects>
+</document>
