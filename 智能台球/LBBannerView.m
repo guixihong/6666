@@ -167,7 +167,7 @@
 //开启定时器
 - (void)startTimer
 {
-    NSTimer *timer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
+    NSTimer *timer = [NSTimer timerWithTimeInterval:2.5 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
     //加入NSRunLoopCommonModes运行模式,这样可以让定时器无论是在默认还是拖拽模式下都可以正常运作
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     self.timer = timer;
