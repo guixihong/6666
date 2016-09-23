@@ -14,6 +14,9 @@
 		4CEEB0FF1D94C81400F155F3 /* 海贼04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB0FA1D94C81400F155F3 /* 海贼04.jpg */; };
 		4CEEB1001D94C81400F155F3 /* 海贼05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB0FB1D94C81400F155F3 /* 海贼05.jpg */; };
 		4CEEB1041D94DBBA00F155F3 /* 海贼01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB1031D94DBBA00F155F3 /* 海贼01.jpg */; };
+		4CEEB10E1D951B5A00F155F3 /* crying_(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB10D1D951B5A00F155F3 /* crying_(1).png */; };
+		4CEEB1101D951D9100F155F3 /* Cry_256px_1185812_easyicon.net.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB10F1D951D9100F155F3 /* Cry_256px_1185812_easyicon.net.png */; };
+		4CEEB1121D951EAD00F155F3 /* cry_emotion_128px_533107_easyicon.net.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB1111D951EAD00F155F3 /* cry_emotion_128px_533107_easyicon.net.png */; };
 		560AE3331D879036004D1598 /* PersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560AE3311D879036004D1598 /* PersonalCenterViewController.m */; };
 		560AE3341D879036004D1598 /* PersonalCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 560AE3321D879036004D1598 /* PersonalCenterViewController.xib */; };
 		560AE3381D87A22D004D1598 /* ViersionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560AE3361D87A22D004D1598 /* ViersionController.m */; };
@@ -291,6 +294,9 @@
 		4CEEB0FA1D94C81400F155F3 /* 海贼04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "海贼04.jpg"; sourceTree = "<group>"; };
 		4CEEB0FB1D94C81400F155F3 /* 海贼05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "海贼05.jpg"; sourceTree = "<group>"; };
 		4CEEB1031D94DBBA00F155F3 /* 海贼01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "海贼01.jpg"; sourceTree = "<group>"; };
+		4CEEB10D1D951B5A00F155F3 /* crying_(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crying_(1).png"; sourceTree = "<group>"; };
+		4CEEB10F1D951D9100F155F3 /* Cry_256px_1185812_easyicon.net.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cry_256px_1185812_easyicon.net.png; sourceTree = "<group>"; };
+		4CEEB1111D951EAD00F155F3 /* cry_emotion_128px_533107_easyicon.net.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cry_emotion_128px_533107_easyicon.net.png; sourceTree = "<group>"; };
 		560AE3301D879036004D1598 /* PersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterViewController.h; sourceTree = "<group>"; };
 		560AE3311D879036004D1598 /* PersonalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterViewController.m; sourceTree = "<group>"; };
 		560AE3321D879036004D1598 /* PersonalCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalCenterViewController.xib; sourceTree = "<group>"; };
@@ -1487,6 +1493,9 @@
 		56267B691D348F4A00812EC1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				4CEEB1111D951EAD00F155F3 /* cry_emotion_128px_533107_easyicon.net.png */,
+				4CEEB10F1D951D9100F155F3 /* Cry_256px_1185812_easyicon.net.png */,
+				4CEEB10D1D951B5A00F155F3 /* crying_(1).png */,
 				568CB4161D93D395007FCA25 /* 没消息.png */,
 				568CB4171D93D395007FCA25 /* 有消息.png */,
 				56BF02741D93A24F002F9840 /* tabbar_item_des_sel@2x.png */,
@@ -1874,6 +1883,7 @@
 				56A41B7A1D8E25C00086BA0E /* score_icon_smile@2x.png in Resources */,
 				560AE34D1D87DADF004D1598 /* CommentListCell.xib in Resources */,
 				4CEEB1041D94DBBA00F155F3 /* 海贼01.jpg in Resources */,
+				4CEEB10E1D951B5A00F155F3 /* crying_(1).png in Resources */,
 				4CEEB1001D94C81400F155F3 /* 海贼05.jpg in Resources */,
 				56267E041D348F4B00812EC1 /* tabbar_item_discover.png in Resources */,
 				5624D3E61D8FA2D0009081CF /* OrderTableViewCell.xib in Resources */,
@@ -1922,6 +1932,7 @@
 				5624D3CC1D8F8941009081CF /* Arrow.png in Resources */,
 				568231271D88F37000313E94 /* 拨打电话图标.png in Resources */,
 				56A41B791D8E25C00086BA0E /* score_icon_normal@2x.png in Resources */,
+				4CEEB1121D951EAD00F155F3 /* cry_emotion_128px_533107_easyicon.net.png in Resources */,
 				560AE3391D87A22D004D1598 /* ViersionController.xib in Resources */,
 				568231181D88EDA100313E94 /* personal-center.png in Resources */,
 				56267E0E1D348F4B00812EC1 /* tabbar_item_my_sel.png in Resources */,
@@ -1929,6 +1940,7 @@
 				562DA9371D8E4A1100DB5E0B /* ComplintDetailViewController.xib in Resources */,
 				56BF02881D93A24F002F9840 /* tabbar_item_discover_sel@2x.png in Resources */,
 				560C79EF1D8E9D310036081A /* Example1TableViewCell.xib in Resources */,
+				4CEEB1101D951D9100F155F3 /* Cry_256px_1185812_easyicon.net.png in Resources */,
 				568231461D893C3800313E94 /* Right.png in Resources */,
 				56BF02901D93A24F002F9840 /* tabbar_item_my_sel@2x.png in Resources */,
 				5682313E1D8938A700313E94 /* 版本信息图标.png in Resources */,

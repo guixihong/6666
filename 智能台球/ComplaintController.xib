@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComplaintController">
@@ -19,11 +19,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score_icon_cry.png" translatesAutoresizingMaskIntoConstraints="NO" id="YV9-4Q-8Sf">
-                    <rect key="frame" x="22" y="20" width="30" height="30"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cry_emotion_128px_533107_easyicon.net.png" translatesAutoresizingMaskIntoConstraints="NO" id="YV9-4Q-8Sf">
+                    <rect key="frame" x="22" y="20" width="40" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="S6P-hM-GLw"/>
-                        <constraint firstAttribute="width" constant="30" id="gba-Zl-kvD"/>
+                        <constraint firstAttribute="height" constant="40" id="S6P-hM-GLw"/>
+                        <constraint firstAttribute="width" constant="40" id="gba-Zl-kvD"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
@@ -31,13 +31,13 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我们会虚心接受批评及时给您反馈处理的!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bI-AL-54k">
-                    <rect key="frame" x="57" y="28" width="258" height="13"/>
+                    <rect key="frame" x="67" y="33" width="248" height="13"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bh6-5F-rNn">
-                    <rect key="frame" x="10" y="65" width="300" height="180"/>
+                    <rect key="frame" x="10" y="75" width="300" height="180"/>
                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="180" id="vjW-C8-ChP"/>
@@ -50,7 +50,7 @@
                     </userDefinedRuntimeAttributes>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入您要投诉的内容描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvT-Wv-TiY">
-                    <rect key="frame" x="16" y="70" width="171" height="21"/>
+                    <rect key="frame" x="16" y="80" width="171" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="171" id="BTj-0o-1L1"/>
                         <constraint firstAttribute="height" constant="21" id="Plc-Jo-6eh"/>
@@ -60,7 +60,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9r-vD-EpH">
-                    <rect key="frame" x="10" y="255" width="300" height="88"/>
+                    <rect key="frame" x="10" y="265" width="300" height="88"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="88" id="2vc-ut-W0A"/>
                     </constraints>
@@ -73,7 +73,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vz8-Tn-nWP">
-                    <rect key="frame" x="200" y="361" width="110" height="34"/>
+                    <rect key="frame" x="200" y="371" width="110" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="i6J-iD-Fcx"/>
                         <constraint firstAttribute="width" constant="110" id="yyd-xx-JTh"/>
@@ -120,6 +120,6 @@
         </view>
     </objects>
     <resources>
-        <image name="score_icon_cry.png" width="24" height="24"/>
+        <image name="cry_emotion_128px_533107_easyicon.net.png" width="128" height="128"/>
     </resources>
 </document>
