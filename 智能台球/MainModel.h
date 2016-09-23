@@ -14,5 +14,4 @@
 @property(nonatomic,copy)NSString *headText;
 @property(nonatomic,copy)NSString *detail;
 @property(nonatomic,strong)NSArray *imgArr;
-@property(nonatomic,strong)NSArray *text;
 @end
