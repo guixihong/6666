@@ -75,10 +75,10 @@
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.frame = CGRectMake(view_WIDTH * i, 0, view_WIDTH,view_HEIGHT);
         
-        imageView.layer.borderWidth = 1;
-        imageView.layer.borderColor = [[UIColor grayColor] CGColor];
-        imageView.layer.cornerRadius = 5;
-        imageView.layer.masksToBounds = YES;
+//        imageView.layer.borderWidth = 1;
+//        imageView.layer.borderColor = [[UIColor grayColor] CGColor];
+//        imageView.layer.cornerRadius = 5;
+//        imageView.layer.masksToBounds = YES;
         //(self.dataArray.count - 1 + i)%self.dataArray.count也可以达到让一开始3个imageview分别显示最后一张<-->第一张<-->第二张图片,但是让大家理解起来会有一定难度,所以采用下面最简单的方法直接设置
         //imageView.tag = (self.dataArray.count - 1 + i)%self.dataArray.count;
 

@@ -123,7 +123,7 @@
 -(void)createImageView
 {
 
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, SCREENHEIGHT/2+70, SCREENWIDTH-20, SCREENHEIGHT - SCREENHEIGHT/2+70 + 44-310)];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, SCREENHEIGHT/2+50, SCREENWIDTH, SCREENHEIGHT - SCREENHEIGHT/2+70 + 44-310+30)];
     imageView.image = [UIImage imageNamed:@"placeholder.jpg"];
     imageView.contentMode = UIViewContentModeScaleToFill;
     [self.view addSubview:imageView];
