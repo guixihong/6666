@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		4CEEB0F41D94C08300F155F3 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB0F31D94C08300F155F3 /* circle.png */; };
 		4CEEB0F61D94C6AD00F155F3 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB0F51D94C6AD00F155F3 /* placeholder.jpg */; };
-		4CEEB0FC1D94C81400F155F3 /* 海贼01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB0F71D94C81400F155F3 /* 海贼01.jpg */; };
 		4CEEB0FD1D94C81400F155F3 /* 海贼02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB0F81D94C81400F155F3 /* 海贼02.jpg */; };
 		4CEEB0FE1D94C81400F155F3 /* 海贼03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB0F91D94C81400F155F3 /* 海贼03.jpg */; };
 		4CEEB0FF1D94C81400F155F3 /* 海贼04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB0FA1D94C81400F155F3 /* 海贼04.jpg */; };
 		4CEEB1001D94C81400F155F3 /* 海贼05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB0FB1D94C81400F155F3 /* 海贼05.jpg */; };
+		4CEEB1041D94DBBA00F155F3 /* 海贼01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB1031D94DBBA00F155F3 /* 海贼01.jpg */; };
 		560AE3331D879036004D1598 /* PersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560AE3311D879036004D1598 /* PersonalCenterViewController.m */; };
 		560AE3341D879036004D1598 /* PersonalCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 560AE3321D879036004D1598 /* PersonalCenterViewController.xib */; };
 		560AE3381D87A22D004D1598 /* ViersionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560AE3361D87A22D004D1598 /* ViersionController.m */; };
@@ -286,11 +286,11 @@
 /* Begin PBXFileReference section */
 		4CEEB0F31D94C08300F155F3 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		4CEEB0F51D94C6AD00F155F3 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
-		4CEEB0F71D94C81400F155F3 /* 海贼01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "海贼01.jpg"; sourceTree = "<group>"; };
 		4CEEB0F81D94C81400F155F3 /* 海贼02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "海贼02.jpg"; sourceTree = "<group>"; };
 		4CEEB0F91D94C81400F155F3 /* 海贼03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "海贼03.jpg"; sourceTree = "<group>"; };
 		4CEEB0FA1D94C81400F155F3 /* 海贼04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "海贼04.jpg"; sourceTree = "<group>"; };
 		4CEEB0FB1D94C81400F155F3 /* 海贼05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "海贼05.jpg"; sourceTree = "<group>"; };
+		4CEEB1031D94DBBA00F155F3 /* 海贼01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "海贼01.jpg"; sourceTree = "<group>"; };
 		560AE3301D879036004D1598 /* PersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterViewController.h; sourceTree = "<group>"; };
 		560AE3311D879036004D1598 /* PersonalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterViewController.m; sourceTree = "<group>"; };
 		560AE3321D879036004D1598 /* PersonalCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalCenterViewController.xib; sourceTree = "<group>"; };
@@ -1694,7 +1694,7 @@
 		56A41B7B1D8E25D30086BA0E /* 海贼王 */ = {
 			isa = PBXGroup;
 			children = (
-				4CEEB0F71D94C81400F155F3 /* 海贼01.jpg */,
+				4CEEB1031D94DBBA00F155F3 /* 海贼01.jpg */,
 				4CEEB0F81D94C81400F155F3 /* 海贼02.jpg */,
 				4CEEB0F91D94C81400F155F3 /* 海贼03.jpg */,
 				4CEEB0FA1D94C81400F155F3 /* 海贼04.jpg */,
@@ -1873,6 +1873,7 @@
 				56B43FC21D86A11A0013CB25 /* phone.jpg in Resources */,
 				56A41B7A1D8E25C00086BA0E /* score_icon_smile@2x.png in Resources */,
 				560AE34D1D87DADF004D1598 /* CommentListCell.xib in Resources */,
+				4CEEB1041D94DBBA00F155F3 /* 海贼01.jpg in Resources */,
 				4CEEB1001D94C81400F155F3 /* 海贼05.jpg in Resources */,
 				56267E041D348F4B00812EC1 /* tabbar_item_discover.png in Resources */,
 				5624D3E61D8FA2D0009081CF /* OrderTableViewCell.xib in Resources */,
@@ -1897,7 +1898,6 @@
 				56A41BA21D8E26090086BA0E /* ZYQAssetPicker.Bundle in Resources */,
 				562DA93C1D8E4A7300DB5E0B /* ComplaintController.xib in Resources */,
 				56B43FB91D8664330013CB25 /* MainCell2.xib in Resources */,
-				4CEEB0FC1D94C81400F155F3 /* 海贼01.jpg in Resources */,
 				568CB40F1D93BCA0007FCA25 /* CommentDetialViewController.xib in Resources */,
 				56B43FB41D8664200013CB25 /* MainCell1.xib in Resources */,
 				568CB4241D93D8E6007FCA25 /* MyMessageTableViewCell.xib in Resources */,
