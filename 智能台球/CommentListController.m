@@ -123,6 +123,7 @@ static NSString * cellID2 = @"cellID2";
 -(void)clickZJPJ{
     
     [self.navigationController popViewControllerAnimated:YES];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"deleteDate" object:nil];
 }
 
 -(void)createLeftItem{
@@ -137,7 +138,10 @@ static NSString * cellID2 = @"cellID2";
 
 -(void)clickLeft{
     
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"deleteDate" object:nil];
+    
 }
 
 -(void)clickRight:(UIBarButtonItem *)item{

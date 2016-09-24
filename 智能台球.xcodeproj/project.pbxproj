@@ -1351,6 +1351,7 @@
 			isa = PBXGroup;
 			children = (
 				4CEEB0F31D94C08300F155F3 /* circle.png */,
+				56267B481D34827400812EC1 /* Model */,
 				56267B111D3480D500812EC1 /* 智能台球 */,
 				56267B2B1D3480D500812EC1 /* 智能台球Tests */,
 				56267B361D3480D500812EC1 /* 智能台球UITests */,
@@ -1371,7 +1372,6 @@
 		56267B111D3480D500812EC1 /* 智能台球 */ = {
 			isa = PBXGroup;
 			children = (
-				56267B481D34827400812EC1 /* Model */,
 				56267B471D34826C00812EC1 /* View */,
 				56267B461D34825B00812EC1 /* Controller */,
 				56267B491D3482D900812EC1 /* Public */,
@@ -1476,6 +1476,7 @@
 				56E8ABB41D90E0C80022A610 /* ComplaintListModel.m */,
 			);
 			name = Model;
+			path = "智能台球";
 			sourceTree = "<group>";
 		};
 		56267B491D3482D900812EC1 /* Public */ = {

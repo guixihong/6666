@@ -192,6 +192,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deleteDate) name:@"deleteDate" object:nil];
+    
     self.work1 = [self.Defaults objectForKey:[NSString stringWithFormat:@"%@work1",self.Judgment]];
     self.work2 = [self.Defaults objectForKey:[NSString stringWithFormat:@"%@work2",self.Judgment]];
     self.work3 = [self.Defaults objectForKey:[NSString stringWithFormat:@"%@work3",self.Judgment]];
@@ -386,6 +389,16 @@
     
     [self.view addSubview:self.myView];
     
+    
+}
+
+
+-(void)deleteDate
+{
+
+    
+    self.textView.text = @"";
+
     
 }
 
