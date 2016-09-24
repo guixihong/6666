@@ -329,14 +329,14 @@ static NSString * cellID2 = @"cellID2";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    MainModel *model = _dataSource[indexPath.row];
+//    MainModel *model = _dataSource[indexPath.row];
     
-    CGRect rect = [model.detail boundingRectWithSize:CGSizeMake(SCREENWIDTH-10, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil];
+//    CGRect rect = [model.detail boundingRectWithSize:CGSizeMake(SCREENWIDTH-10, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil];
     
-    if (rect.size.height >29) {
-        
-        return 175 + rect.size.height - 29;
-    }
+//    if (rect.size.height >29) {
+    
+//        return 175 + rect.size.height - 29;
+//    }
     
     
     return 175;

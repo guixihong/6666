@@ -17,4 +17,6 @@
 @property(nonatomic,strong)NSMutableArray *array;
 @property(nonatomic,strong)MainModel *model;
 
+
+@property (weak, nonatomic) IBOutlet UIButton *myButton;
 @end

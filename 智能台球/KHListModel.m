@@ -1,14 +1,13 @@
 //
-//  MainModel.m
+//  KHListModel.m
 //  智能台球
 //
 //  Created by sunchao on 16/9/24.
 //  Copyright © 2016年 sunchao. All rights reserved.
 //
 
-#import "MainModel.h"
+#import "KHListModel.h"
 
-@implementation MainModel
-
+@implementation KHListModel
 
 @end

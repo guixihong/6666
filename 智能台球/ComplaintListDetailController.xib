@@ -150,6 +150,6 @@
         </view>
     </objects>
     <resources>
-        <image name="placeholder.jpg" width="1024" height="768"/>
+        <image name="placeholder.jpg" width="1080" height="465"/>
     </resources>
 </document>

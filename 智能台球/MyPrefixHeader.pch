@@ -34,6 +34,7 @@
 #import "ComplaintListCell.h"
 #import "ComplaintListController.h"
 #import "ComplaintListDetailController.h"
+#import "KHListModel.h"
 //
 //
 #import "LPLevelView.h"
@@ -92,6 +93,10 @@
 #endif
 
 #define APPDELEGATE (AppDelegate *)[UIApplication sharedApplication].delegate
+
+//
+#define BASEURL @"http://111.200.41.23:8090"
+//
 
 #endif
 #endif

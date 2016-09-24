@@ -28,6 +28,7 @@ static NSString * cellID3 = @"cellID3";
     NSArray *arr3;//分类名称
     UIImageView *titleImage;//导航栏顶部 image
     UIButton *rightButton;//
+    KHListModel *khlModel;
 }
 -(NSMutableArray *)dataSource{
     
@@ -84,17 +85,20 @@ static NSString * cellID3 = @"cellID3";
     self.title = @"";
     self.tabBarItem.title = @"主页";
     [self createRight];
-   
     [self.view addSubview:self.tableView];
     [_tableView registerNib:[UINib nibWithNibName:@"MainCell1" bundle:nil] forCellReuseIdentifier:cellID1];
     [_tableView registerNib:[UINib nibWithNibName:@"MainCell2" bundle:nil] forCellReuseIdentifier:cellID2];
     [_tableView registerNib:[UINib nibWithNibName:@"MainCell3" bundle:nil] forCellReuseIdentifier:cellID3];
-    [self createTableHeaderView];
-    
     [self loadData];
+
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeMessageState) name:@"changeMessageState" object:nil];
     
+//    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(200, 200, 30, 30)];
+//    [self.view addSubview:button];
+//    [button sd_setBackgroundImageWithURL:[NSURL URLWithString:@"http://111.200.41.23:8090/yblimg/gcys/201608/0022280002-0002-03-290849242357638573.jpg"] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"placeholder.jpg"]];
+//        [button sd_setImageWithURL:[NSURL URLWithString:@"http://111.200.41.23:8090/yblimg/gcys/201608/0022280002-0002-03-290849242357638573.jpg"] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"placeholder.jpg"]];
+
 }
 
 -(void)changeMessageState{
@@ -124,24 +128,48 @@ static NSString * cellID3 = @"cellID3";
 
 }
 
+-(void)loadData2{
+
+     [NetworkRequest requestWithURLString:@"http://111.200.41.23:8090/userapp?funname=getYsjl&khbh=0022280" parameters:nil type:HttpRequestTypeGet success:^(id responseObject) {
+    
+         NSDictionary *dic = [self parseJSONStringToNSDictionary:responseObject];
+         NSArray *arr = [dic objectForKey:@"data"];
+
+         self.dataSource = [MainModel arrayOfModelsFromDictionaries:arr error:nil];
+         [_tableView reloadData];
+                  
+  } failure:^(NSError *error) {
+    
+      
+  }];
+
+    
+}
+
+-(NSDictionary *)parseJSONStringToNSDictionary:(NSString *)JSONString {
+    
+    NSData *JSONData = [JSONString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableContainers error:nil];
+    
+    return responseJSON;
+}
+
+
 -(void)loadData{
 
-    MainModel *model = [[MainModel alloc]init];
-    model.time = @"10-11 -2016";
-    model.headText = @"开工交底";
-    model.detail = @"sdfksdflsdf 找地方看见你说的罚款缴纳水电费是你的疯狂思念对方可是你的疯狂你是否打开就能上的看法呢什么的烦恼是看你的疯狂思念是能否快速的那份sdfksdflsdf 找地方看见你说的罚款缴纳水电费是你的疯狂思念对方可是你的疯狂你是否打开就能上的看法呢什么的烦恼是看你的疯狂思念是能否快速的那份";
-    MainModel *model2 = [[MainModel alloc]init];
-    model2.time = @"10-11 -2017";
-    model2.headText = @"隐蔽验收";
-    model2.detail = @"sdfksdflsdf 找地方看见你";
-    
-    MainModel *model3 = [[MainModel alloc]init];
-    model3.time = @"10-11 -2018";
-    model3.headText = @"中期验收";
-    model3.detail = @"sdfksdflsdf 找地方看见你水电费水电费水电费水电费水电费水电费是";
-    
-    [self.dataSource  addObjectsFromArray:@[model,model2,model3]];
-    [_tableView reloadData];
+    //http://111.200.41.23:8090/userapp?funname=getKhxx&khbh=0022280
+    [NetworkRequest requestWithURLString:@"http://111.200.41.23:8090/userapp?funname=getKhxx&khbh=0022280" parameters:nil type:HttpRequestTypeGet success:^(id responseObject) {
+
+        NSString *str = responseObject;
+        khlModel = [[KHListModel alloc]initWithString:str error:nil];
+        
+        [self createTableHeaderView];
+        [self loadData2];
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 -(void)createTableHeaderView{
@@ -166,8 +194,8 @@ static NSString * cellID3 = @"cellID3";
     myLabel1.text = @"  房屋地址：";
     myLabel1.font = [UIFont systemFontOfSize:15];
     UILabel *myLabel2 = [[UILabel alloc]initWithFrame:CGRectMake(45, 30,[UIScreen mainScreen].bounds.size.width-45,35)];
-    myLabel2.text = @"北京市朝阳区将台路普天科技创业园5号院16号楼 普天科技创业园5号院16号楼";
-//    myLabel2.text = _fwdz;
+//    myLabel2.text = @"北京市朝阳区将台路普天科技创业园5号院16号楼 普天科技创业园5号院16号楼";
+    myLabel2.text = khlModel.work_address;
     myLabel2.font = [UIFont systemFontOfSize:14];
     if (SCREENWIDTH == 320) {
         
@@ -176,7 +204,8 @@ static NSString * cellID3 = @"cellID3";
         
     }
     myLabel2.numberOfLines = 0;
-    myLabel2.textColor = [UIColor colorWithRed:121/256.0 green:123/256.0 blue:130/256.0 alpha:1];
+    //[UIColor colorWithRed:121/256.0 green:123/256.0 blue:130/256.0 alpha:1];
+    myLabel2.textColor = [UIColor blackColor];
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(7,12, 20, 20)];
     imageView.image = [UIImage imageNamed:@"房屋住址"];
 //    imageView.image = [UIImage imageNamed:_midImg];
@@ -187,11 +216,11 @@ static NSString * cellID3 = @"cellID3";
 
     
     
-    NSArray *arr1 = @[[NSString stringWithFormat:@"%@%@",@"   客户姓名：",@"赵本山"],[NSString stringWithFormat:@"%@%@",@"   设计管家：",@"赵本山"],[NSString stringWithFormat:@"%@%@",@"   品 控 师  ：",@"赵本山"],[NSString stringWithFormat:@"%@%@",@"   工      长 ：",@"赵本山"],[NSString stringWithFormat:@"%@%@",@"   班      长 ：",@"赵本山"],[NSString stringWithFormat:@"%@%@",@"   开工时间：",@"2016年09月09日"],[NSString stringWithFormat:@"%@%@",@"   竣工时间：",@"2016年09月09日"]];
-//    NSArray *arr1 = @[[NSString stringWithFormat:@"%@%@",@"   客户姓名：",_khxm],[NSString stringWithFormat:@"%@%@",@"   设计管家：",_sjgj],[NSString stringWithFormat:@"%@%@",@"   品控师：",_pks],[NSString stringWithFormat:@"%@%@",@"   工长：",_gz],[NSString stringWithFormat:@"%@%@",@"   班长：",_bz],[NSString stringWithFormat:@"%@%@",@"   开工时间：",_kgsj],[NSString stringWithFormat:@"%@%@",@"   竣工时间：",_jgsj]];
+//    NSArray *arr1 = @[[NSString stringWithFormat:@"%@%@",@"   客户姓名：",@"赵本山"],[NSString stringWithFormat:@"%@%@",@"   设计管家：",@"赵本山"],[NSString stringWithFormat:@"%@%@",@"   品 控 师  ：",@"赵本山"],[NSString stringWithFormat:@"%@%@",@"   工      长 ：",@"赵本山"],[NSString stringWithFormat:@"%@%@",@"   班      长 ：",@"赵本山"],[NSString stringWithFormat:@"%@%@",@"   开工时间：",@"2016年09月09日"],[NSString stringWithFormat:@"%@%@",@"   竣工时间：",@"2016年09月09日"]];
+    NSArray *arr1 = @[[NSString stringWithFormat:@"%@%@",@"   客户姓名：",khlModel.client_name],[NSString stringWithFormat:@"%@%@",@"   设计管家：",khlModel.designer_name],[NSString stringWithFormat:@"%@%@",@"   品 控 师  ：",khlModel.inspector_name],[NSString stringWithFormat:@"%@%@",@"   工      长 ：",khlModel.worker_name],[NSString stringWithFormat:@"%@%@",@"   班      长 ：",khlModel.monitor_name],[NSString stringWithFormat:@"%@%@",@"   开工时间：",khlModel.start_time],[NSString stringWithFormat:@"%@%@",@"   竣工时间：",khlModel.end_time]];
     
-        arr2 = @[[NSString stringWithFormat:@"电话:%@",@"13112345678"],[NSString stringWithFormat:@"电话:%@",@"13112345678"],[NSString stringWithFormat:@"电话:%@",@"13112345678"],[NSString stringWithFormat:@"电话:%@",@"13112345678"],[NSString stringWithFormat:@"电话:%@",@"13112345678"]];
-//     arr2 = @[[NSString stringWithFormat:@"电话:%@",_khdh],[NSString stringWithFormat:@"电话:%@",_sjgjdh],[NSString stringWithFormat:@"电话:%@",_pksdh],[NSString stringWithFormat:@"电话:%@",_gzdh],[NSString stringWithFormat:@"电话:%@",_bzdh                                                                                               ]];
+//        arr2 = @[[NSString stringWithFormat:@"电话:%@",@"13112345678"],[NSString stringWithFormat:@"电话:%@",@"13112345678"],[NSString stringWithFormat:@"电话:%@",@"13112345678"],[NSString stringWithFormat:@"电话:%@",@"13112345678"],[NSString stringWithFormat:@"电话:%@",@"13112345678"]];
+     arr2 = @[[NSString stringWithFormat:@"电话:%@",khlModel.client_phone],[NSString stringWithFormat:@"电话:%@",khlModel.designer_phone],[NSString stringWithFormat:@"电话:%@",khlModel.inspector_phone],[NSString stringWithFormat:@"电话:%@",khlModel.worker_phone],[NSString stringWithFormat:@"电话:%@",khlModel.monitor_phone                                                                                               ]];
         arr3 = @[@"客户姓名",@"设计管家",@"品控师",@"工长",@"班长",@"开工时间",@"竣工时间"];
     
     for (int i = 0;i < 7;i++) {
@@ -260,6 +289,12 @@ static NSString * cellID3 = @"cellID3";
         if (i > 4) {
             
             myLabel.text = arr1[i];
+            if(i == 6){
+            if ([khlModel.end_time isEqualToString:@""]) {
+                
+                myLabel.text = [NSString stringWithFormat:@"%@%@",@"   竣工时间：",@"正在施工中"];
+            }
+            }
             myLabel.textColor = [UIColor orangeColor];
             
         }
@@ -282,13 +317,44 @@ static NSString * cellID3 = @"cellID3";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    NSLog(@"+++++++++++++++%lu",(unsigned long)self.dataSource.count);
     return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
+    
+    MainModel *model = _dataSource[indexPath.row];
+    if ([model.imageurl containsString:@","]) {
         
-        MainCell1 *cell = [tableView dequeueReusableCellWithIdentifier:cellID1 forIndexPath:indexPath];
+        NSArray *arr = [model.imageurl componentsSeparatedByString:@","];
+        if (arr.count >1  &&  arr.count < 3 ) {
+            
+            MainCell1 *cell = [tableView dequeueReusableCellWithIdentifier:cellID1 forIndexPath:indexPath];
+            for (UIButton *Btn in cell.array) {
+                
+                [Btn addTarget:self action:@selector(click1:) forControlEvents:UIControlEventTouchUpInside];
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.model = self.dataSource[indexPath.row];
+            return cell;
+            
+        }else{
+        
+            MainCell3 *cell = [tableView dequeueReusableCellWithIdentifier:cellID3 forIndexPath:indexPath];
+            for (UIButton *Btn in cell.array) {
+                
+                [Btn addTarget:self action:@selector(click1:) forControlEvents:UIControlEventTouchUpInside];
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.model = self.dataSource[indexPath.row];
+            return cell;
+
+            
+        }
+        
+    }else{
+    
+        MainCell2 *cell = [tableView dequeueReusableCellWithIdentifier:cellID2 forIndexPath:indexPath];
         for (UIButton *Btn in cell.array) {
             
             [Btn addTarget:self action:@selector(click1:) forControlEvents:UIControlEventTouchUpInside];
@@ -296,54 +362,12 @@ static NSString * cellID3 = @"cellID3";
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.model = self.dataSource[indexPath.row];
         return cell;
-    }else if (indexPath.row == 1){
-        
-        MainCell1 *cell = [tableView dequeueReusableCellWithIdentifier:cellID2 forIndexPath:indexPath];
-        UIButton *Btn = cell.array[0];
-         [Btn addTarget:self action:@selector(click1:) forControlEvents:UIControlEventTouchUpInside];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.model = self.dataSource[indexPath.row];
 
-        return cell;
-        
-    }else if (indexPath.row == 2){
-        
-        MainCell1 *cell = [tableView dequeueReusableCellWithIdentifier:cellID3 forIndexPath:indexPath];
-        for (UIButton *Btn in cell.array) {
-            
-            [Btn addTarget:self action:@selector(click1:) forControlEvents:UIControlEventTouchUpInside];
-        }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.model = self.dataSource[indexPath.row];
-
-        return cell;
         
     }
     
-    return nil;
     
-//    JX_PDModel * pdmodel = self.dataSourcepd[indexPath.row];
-//    if ([pdmodel.type isEqualToString:@"Collection"]) {
-//        JX_SCTableViewCellSCROLL * cell = [tableView dequeueReusableCellWithIdentifier:cellID2 forIndexPath:indexPath];
-//        cell.models = self.datasources[indexPath.row];
-//        int i = 0;
-//        
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        return cell;
-//        (2) static NSString*ID=@"cell";
-//        OnlineStudyCell*cell=[tableView dequeueReusableCellWithIdentifier:ID];
-//        if (cell==nil) {
-//            cell=[[OnlineStudyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-//            cell.selectionStyle=UITableViewCellSelectionStyleNone;
-//        }
-//        OnlineStudyModel* model=[self.onlineStudyArray objectAtIndex:indexPath.row];
-//        
-//        cell.model=model;
-//        
-//        
-//        
-//        
-//        return cell;
+    return nil;
     
 }
     
@@ -369,7 +393,8 @@ static NSString * cellID3 = @"cellID3";
         case 4:
             
         {
-            NSArray *urls = @[@"http://imgsrc.baidu.com/forum/w%3D580/sign=67ef9ea341166d223877159c76230945/e2f7f736afc3793138419f41e9c4b74543a911b7.jpg",@"http://imgsrc.baidu.com/forum/w%3D580/sign=a18485594e086e066aa83f4332087b5a/4a110924ab18972bcd1a19a2e4cd7b899e510ab8.jpg",@"http://imgsrc.baidu.com/forum/w%3D580/sign=42d17a169058d109c4e3a9bae159ccd0/61f5b2119313b07e550549600ed7912397dd8c21.jpg"];            Example1ViewController *vc = [[Example1ViewController alloc]init];
+            NSArray *urls = @[@"http://imgsrc.baidu.com/forum/w%3D580/sign=67ef9ea341166d223877159c76230945/e2f7f736afc3793138419f41e9c4b74543a911b7.jpg",@"http://imgsrc.baidu.com/forum/w%3D580/sign=a18485594e086e066aa83f4332087b5a/4a110924ab18972bcd1a19a2e4cd7b899e510ab8.jpg",@"http://imgsrc.baidu.com/forum/w%3D580/sign=42d17a169058d109c4e3a9bae159ccd0/61f5b2119313b07e550549600ed7912397dd8c21.jpg"];
+            Example1ViewController *vc = [[Example1ViewController alloc]init];
             [vc setDataphotos:urls];
             self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
@@ -386,7 +411,8 @@ static NSString * cellID3 = @"cellID3";
         case 10:
             
         {
-            NSArray *urls = @[@"http://imgsrc.baidu.com/forum/w%3D580/sign=a18485594e086e066aa83f4332087b5a/4a110924ab18972bcd1a19a2e4cd7b899e510ab8.jpg",@"http://imgsrc.baidu.com/forum/w%3D580/sign=42d17a169058d109c4e3a9bae159ccd0/61f5b2119313b07e550549600ed7912397dd8c21.jpg"];            Example1ViewController *vc = [[Example1ViewController alloc]init];
+            NSArray *urls = @[@"http://imgsrc.baidu.com/forum/w%3D580/sign=a18485594e086e066aa83f4332087b5a/4a110924ab18972bcd1a19a2e4cd7b899e510ab8.jpg",@"http://imgsrc.baidu.com/forum/w%3D580/sign=42d17a169058d109c4e3a9bae159ccd0/61f5b2119313b07e550549600ed7912397dd8c21.jpg"];
+            Example1ViewController *vc = [[Example1ViewController alloc]init];
             [vc setDataphotos:urls];
             self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
@@ -401,51 +427,87 @@ static NSString * cellID3 = @"cellID3";
 }
     
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     MainModel *model = _dataSource[indexPath.row];
     
-    CGRect rect = [model.detail boundingRectWithSize:CGSizeMake(SCREENWIDTH-69, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil];
-    if (rect.size.height >29) {
+    if (model.detail.length) {//有 detail
         
-        if (indexPath.row == 0) {
+        CGRect rect = [model.detail boundingRectWithSize:CGSizeMake(SCREENWIDTH-69, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil];
+        
+        if (rect.size.height >29) {
+            
+            if ([model.imageurl containsString:@","]) {
+                
+                NSArray *arr = [model.imageurl componentsSeparatedByString:@","];
+                if (arr.count < 3 && arr.count >1) {
+                    
+                    return 151 +rect.size.height-29;
+
+                    
+                }else{
+                    
+                    return 242+rect.size.height-29;
+                    
+                }
+                
+            }else{
+                
+                   return 213+rect.size.height-29;
+                
+            }
             
             
-            return 151 +rect.size.height-29;
+        }else{
             
-        }else if (indexPath.row == 1){
+            if ([model.imageurl containsString:@","]) {
+                
+                NSArray *arr = [model.imageurl componentsSeparatedByString:@","];
+                if (arr.count < 3 && arr.count >1) {
+                    
+                    return 151;
+                    
+                }else{
+                    
+                    return 242;
+                    
+                }
+                
+            }else{
+                
+                return 213;
+                
+            }
             
-            return 213+rect.size.height-29;
-            
-        }else if (indexPath.row == 2){
-            
-            return 242+rect.size.height-29;
             
         }
 
-    }else{
+    }else{//detail  @""
     
-        if (indexPath.row == 0) {
+        if ([model.imageurl containsString:@","]) {
             
+            NSArray *arr = [model.imageurl componentsSeparatedByString:@","];
+            if (arr.count < 3 && arr.count >1) {
+                
+                return 151-29;
+                
+            }else{
+                
+                return 242-29;
+                
+            }
             
-            return 151;
+        }else{
             
-        }else if (indexPath.row == 1){
-            
-            return 213;
-            
-        }else if (indexPath.row == 2){
-            
-            return 242;
+            return 213-29;
             
         }
 
         
     }
-
     
     return 0;
     
 }
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     

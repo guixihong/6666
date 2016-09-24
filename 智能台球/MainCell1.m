@@ -29,8 +29,18 @@
 
     _model = model;
     _timeLabel.text = model.time;
-    _headLabel.text = model.headText;
-    _detailLabel.text = model.detail;
+    _headLabel.text = model.content;
+    
+    NSArray *arr = [model.imageurl componentsSeparatedByString:@","];
+    NSLog(@"========%@=",model.imageurl);
+    int i = 0;
+    for (NSString *str in arr) {
+        
+        NSString *newUrl = [NSString stringWithFormat:@"%@%@",BASEURL,str];
+        UIButton *Btn = _array[i];
+        [Btn sd_setBackgroundImageWithURL:[NSURL URLWithString:newUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"placeholder.jpg"]];
+        i++;
+    }
     
 }
 

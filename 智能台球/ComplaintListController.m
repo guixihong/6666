@@ -63,7 +63,7 @@ static NSString * cellID = @"cellID1";
     model.tszt = @"已结案";
     model.tssj = @"2016-10-10 10:10";
     model.tsnr = @"就爱上飞红沙发都是内定空间撒即可对你说的你犯法的空间的设计上年度房价可能深刻的烦恼年十大健康非农数据可能放大卡时间内答复";
-    model.lLabelColor = [UIColor greenColor];
+    model.lLabelColor = [UIColor colorWithRed:4/256.0 green:128/256.0 blue:64/256.0 alpha:1];
     [self.dataSource addObject:model];
     
     ComplaintListModel *model2 = [[ComplaintListModel alloc]init];

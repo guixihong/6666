@@ -9,14 +9,20 @@
 #import "MainCell2.h"
 
 @implementation MainCell2
+{
 
+    UIButton *Btn;
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
     self.backgroundColor = COLOR(239, 239, 239, 1);
+    if(_array == nil){
+    
+        _array = [NSMutableArray array];
 
-    _array = [NSMutableArray array];
-    UIButton *Btn = [self viewWithTag:4];
+    }
+    Btn = [self viewWithTag:4];
     [_array addObject:Btn];
 }
 
@@ -24,8 +30,12 @@
     
     _model = model;
     _timeLabel.text = model.time;
-    _headLabel.text = model.headText;
-    _detailLabel.text = model.detail;
+    _headLabel.text = model.content;
+//    _detailLabel.text = model.detail;
+    NSLog(@"========%@===%@==%ld",model.imageurl,[NSString stringWithFormat:@"%@%@",@"111.200.41.23:8090",model.imageurl],(long)_myButton.tag);
+    //http://111.200.41.23:8090
+    UIButton *Btnn = _array[0];
+    [Btnn sd_setBackgroundImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",BASEURL,model.imageurl]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"placeholder.jpg"]];
     
 }
 

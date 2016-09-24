@@ -29,8 +29,8 @@
     
     _model = model;
     _timeLabel.text = model.time;
-    _headLabel.text = model.headText;
-    _detailLabel.text = model.detail;
+    _headLabel.text = model.content;
+//    _detailLabel.text = model.detail;
     
 }
 

@@ -20,6 +20,7 @@
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];//使用这个将得到的是NSData
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
 //直接写入文件缓存
 //    NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -85,8 +86,16 @@
 //                    [wdata writeToFile:newPath atomically:YES];
                     
 //                    [cache setObject:wdata forKey:cacheType];
-                    NSDictionary *newDic = [self dataToJson:responseObject];
-                    success(newDic);
+                    
+//                    NSDictionary *newDic = [self dataToJson:responseObject];
+                    
+                    NSString *str = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+                    NSString *str1 = [str stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//                    NSString *nStr = [str1 stringByReplacingOccurrencesOfString:@"[" withString:@"("];
+//                    NSString *nStr2 = [nStr stringByReplacingOccurrencesOfString:@"]" withString:@")"];
+
+//                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+                    success(str1);
                 }
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -108,8 +117,8 @@
 //                    [wdata writeToFile:newPath atomically:YES];
 //                    [cache setObject:wdata forKey:cacheType];
 
-                    NSDictionary *newDic = [self dataToJson:responseObject];
-                    success(newDic);
+//                    NSDictionary *newDic = [self dataToJson:responseObject];
+//                    success(newDic);
                 }
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -124,11 +133,6 @@
     }
 }
 
-+(NSDictionary *)dataToJson:(NSData *)data{
-
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-    return dict;
-}
 
 //+(NSString *)generatePathWithString:(NSString *)urlString{
 //
